@@ -17,15 +17,13 @@ module RailsWarden
 
       # Access the currently logged in user
       # :api: public
-      def user(*args)
+      def current_user(*args)
         warden.user(*args)
       end
-      alias_method :current_user, :user
 
-      def user=(user)
+      def current_user=(user)
         warden.set_user user
       end
-      alias_method :current_user=, :user=
     end # Helper Methods
 
     module ControllerOnlyMethods
